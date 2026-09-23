@@ -17,6 +17,11 @@ class ViewController: UIViewController {
         subtitleLabel.text = "Let's get started!"
     }
     
+    
+    @IBAction func exploreButtonTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "ShowDetailSegue", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
