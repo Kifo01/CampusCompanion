@@ -10,7 +10,8 @@ class AnnouncementCell: UITableViewCell {
         let isUrgent = announcement.priority == "Urgent"
 
         titleLabel.text = announcement.title
-        dateLabel.text = "\(announcement.category) • \(announcement.date)"
+        dateLabel.text = "\(announcement.category) • \(announcement.date)\n\(announcement.location) • Priority: \(announcement.priority)"
+        dateLabel.numberOfLines = 2
         categoryIconImageView.image = UIImage(
             systemName: isUrgent ? "exclamationmark.triangle.fill" : "megaphone.fill"
         )

@@ -27,6 +27,7 @@ class DetailViewController: UIViewController {
 
             Category: \(announcement.category)
             Date: \(announcement.date)
+            Location: \(announcement.location)
             Priority: \(announcement.priority)
             Posted by: \(announcement.postedBy)
             """

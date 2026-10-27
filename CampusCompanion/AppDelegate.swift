@@ -6,11 +6,34 @@
 //
 
 import UIKit
+import CoreData
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: "CampusCompanion")
+        let description = container.persistentStoreDescriptions.first
+        description?.shouldMigrateStoreAutomatically = true
+        description?.shouldInferMappingModelAutomatically = true
+        container.loadPersistentStores { _, error in
+            if let error {
+                fatalError("Unresolved Core Data error: \(error)")
+            }
+        }
+        return container
+    }()
 
+    func saveContext() {
+        let context = persistentContainer.viewContext
+        guard context.hasChanges else { return }
+
+        do {
+            try context.save()
+        } catch {
+            assertionFailure("Core Data save failed: \(error)")
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

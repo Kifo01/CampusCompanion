@@ -136,7 +136,13 @@
                             <constraint firstItem="SoL-bj-cix" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="yFU-26-Arc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Campus Companion" id="biz-dG-FWn"/>
+                    <navigationItem key="navigationItem" title="Campus Companion" id="biz-dG-FWn">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="M5A-8x-Kz1">
+                            <connections>
+                                <action selector="resetPreferencesTapped:" destination="BYZ-38-t0r" id="pR8-Gf-2M3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventDatePicker" destination="Ah3-tK-c4S" id="fUq-36-uoN"/>
                         <outlet property="guestCountLabel" destination="SoL-bj-cix" id="Kc7-iL-4Tb"/>
@@ -194,7 +200,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnnouncementCell" rowHeight="60" id="uRf-v3-jCO" customClass="AnnouncementCell" customModule="CampusCompanion" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnnouncementCell" rowHeight="78" id="uRf-v3-jCO" customClass="AnnouncementCell" customModule="CampusCompanion" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="50" width="393" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRf-v3-jCO" id="vth-mj-ADy">
@@ -244,7 +250,18 @@
                             <outlet property="delegate" destination="4X0-A8-hJh" id="8ex-4M-fzN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="CPl-S1-t5r"/>
+                    <navigationItem key="navigationItem" id="CPl-S1-t5r">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="H3m-Rp-6vQ">
+                            <connections>
+                                <action selector="addAnnouncementTapped:" destination="4X0-A8-hJh" id="D6s-4c-Ln2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="w1Q-Rf-5hA">
+                            <connections>
+                                <action selector="refreshTapped:" destination="4X0-A8-hJh" id="Y3p-Gn-8sL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="FKa-6C-WXN" kind="show" identifier="ShowAnnouncementDetailSegue" id="VvC-K0-A9x"/>
                     </connections>
