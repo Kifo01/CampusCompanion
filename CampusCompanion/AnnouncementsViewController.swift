@@ -10,8 +10,8 @@ import CoreData
 
 private enum RemoteEndpoint {
     static let announcements = URL(
-        string: "https://raw.githubusercontent.com/feu-mad2/" +
-        "campus-companion-api/main/announcements.json"
+        string: "https://raw.githubusercontent.com/vohn-dev/campus-companion-api/" +
+        "refs/heads/main/announcements.json"
     )!
 }
 
@@ -149,8 +149,8 @@ class AnnouncementsViewController: UITableViewController {
                 announcement.title = dto.title
                 announcement.date = dto.date
                 announcement.category = dto.category
-                announcement.location = dto.location
-                announcement.priority = dto.priority
+                announcement.location = dto.location ?? "Unspecified"
+                announcement.priority = dto.priority ?? "Normal"
                 announcement.postedBy = "Campus Feed"
             }
 
